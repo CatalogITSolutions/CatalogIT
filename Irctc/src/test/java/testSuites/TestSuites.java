@@ -35,14 +35,17 @@ public class TestSuites {
 	boolean flag;
 	public static String xlfilepath;
 	public static String propfilepath;
+	public static String xmlfilepath;
 	ExReportUtility exRp;
 
 	public TestSuites() {
 		// TODO Auto-generated constructor stub
 		propfilepath = "testData/TestData.properties";
+		xmlfilepath ="testData/Data.xml";
+		xlfilepath = "testData/DataXL.xls";
 		readprop = new ReadProperties(propfilepath);
 		tc = new TestCases();
-		xlfilepath = "testData/DataXL.xls";
+		
 		// new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date()) +
 		// "reports.html");
 		extentFamily = new ExtentReports("TestReports/report.html");
@@ -117,6 +120,11 @@ public class TestSuites {
 		tc.pnrStatus();
 		tc.accountActions();
 		System.out.println(" End ts: smokeSuite");
+	}
+	
+	
+	public void datadrivenSuite() {
+		tc.dataDrivenTest();
 	}
 
 }

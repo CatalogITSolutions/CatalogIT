@@ -11,7 +11,9 @@ import org.openqa.selenium.WebDriver;
 import applicationUtilities.ApplicationUtilities;
 import generalUtilities.ReadProperties;
 import generalUtilities.ReadXL;
+import generalUtilities.Readjson;
 import testSuites.TestSuites;
+import testSuites.UnitSuites;
 
 public class PnrStatus {
 
@@ -19,6 +21,7 @@ public class PnrStatus {
 	ApplicationUtilities appUts;
 	ReadXL readxl;
 	ReadProperties readprop;
+	Readjson readjson;
 
 	public PnrStatus(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -26,7 +29,7 @@ public class PnrStatus {
 		appUts = new ApplicationUtilities(driver);
 		readxl = new ReadXL(TestSuites.xlfilepath);
 		readprop = new ReadProperties("testData/TestData.properties");
-		
+		readjson = new Readjson(UnitSuites.jsonfilepath);
 	}
 
 	public void checkPnrStatus() {

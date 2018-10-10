@@ -42,8 +42,57 @@ public class Listener implements ITestListener {
 		//		new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date()) + "reports.html");
 		parent = extentFamily.startTest("Smoke Suite");
 	}
-	
+
+
+	@Override
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onTestFailure(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
 	public void onStart(ITestContext context) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void onFinish(ITestContext context) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+/*	public void onStart(ITestContext context) {
 		  System.out.println("on start");
 		 // driver = new ChromeDriver(); // Set the drivers path in environment variables to avoid code(System.setProperty())
 		  extentFamily = new ExtentReports(new SimpleDateFormat("yyyy-MM-dd hh-mm-ss-ms").format(new Date()) + "reports.html");
@@ -87,7 +136,7 @@ public class Listener implements ITestListener {
 		  driver.close();
 		  extentFamily.endTest(parent);
 		  extentFamily.flush();
-		 }
+		 }*/
 
 
 }

@@ -17,10 +17,10 @@ public class Readxlsx {
 
 	FileInputStream readfile;
 	String xlsxPath;
-	XSSFWorkbook readbook = null;
+	XSSFWorkbook readbook;
 	XSSFSheet readsheet;
 	XSSFRow row;
-	XSSFCell cell;
+	private static XSSFCell Cell;
 
 	public Readxlsx(String xlsxPath) {
 		// TODO Auto-generated constructor stub
@@ -38,19 +38,25 @@ public class Readxlsx {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println(e.getMessage());
 		}
-
 		readsheet = readbook.getSheet(sheetName);
-
 		// System.out.println(sheetName);
-
 		return readsheet;
 
 	}
 
-	public String getCellData(String sheetName, int col, int row) {
+	public String getCellData(String sheetName, int row, int col) {
 		readsheet = getMySheet(sheetName);
+		Cell = readsheet.getRow(row).getCell(col);
+		String CellData = Cell.getStringCellValue();
+		return CellData;
+	}
 
-		return readsheet.getRow(row).getCell(col).getStringCellValue();
+	public int getRowCount(String sheetName) {
+		readsheet = getMySheet(sheetName);
+		int row = readsheet.getLastRowNum();
+		row = row + 1;
+		return row;
 	}
 }

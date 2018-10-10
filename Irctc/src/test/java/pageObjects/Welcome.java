@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import generalUtilities.ReadProperties;
 import generalUtilities.ReadXL;
+import generalUtilities.Readjson;
 import generalUtilities.Readxml;
 
 public class Welcome {
@@ -14,6 +15,7 @@ public class Welcome {
 	ReadProperties readprop;
 	ReadXL readxl;
 	Readxml readxml;
+	Readjson readjson;
 
 	public Welcome(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -21,6 +23,7 @@ public class Welcome {
 		readprop = new ReadProperties("testData/TestData.properties");
 		readxl = new ReadXL("testData/DataXL.xls");
 		readxml = new Readxml("testData/Data.xml");
+		readjson = new Readjson("testData/Data.json");
 	}
 	
 //	@BeforeAll
@@ -33,13 +36,16 @@ public class Welcome {
 		System.out.println("Welcome to IRCTC");
 		System.out.println(" Start PO : launchApplication");
 		driver.manage().window().maximize();
+		
 		// System.setProperty("webdriver.chrome.driver",
 		// "C:\\Java\\Workspace\\JarFiles\\chromedriver\\chromedriver.exe");
 		// driver = new ChromeDriver();
 		// driver.get("https://www.irctc.co.in/nget/");
 	//	driver.get(readprop.readValue("URL"));
 		//	driver.get(readxl.getCellData("URL", 0, 0));
-		driver.get(readxml.getMenuData("URL", "/url"));
+	//	driver.get(readxml.getMenuData("URL", "/Train/Link[@id='1']/url"));
+		//driver.get(readjson.getData("URL","url"));
+		driver.get(readjson.getData("url"));
 		
 		System.out.println("End PO : launchApplication");
 	}
