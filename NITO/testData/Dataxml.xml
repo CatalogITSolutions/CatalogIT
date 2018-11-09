@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<Train>
+	<Link id="1">
+		<url> https://www.irctc.co.in/nget/ </url>
+	</Link>
+
+	<Search id="1">
+		<From>SECUNDERABAD JN - SC	</From>
+		<To>PILER - PIL	</To>
+		<Date>13-10-2018</Date>
+	</Search>
+
+</Train>
+ 
+  
