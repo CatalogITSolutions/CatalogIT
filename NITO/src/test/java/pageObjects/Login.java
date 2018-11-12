@@ -18,7 +18,7 @@ public class Login {
 		// TODO Auto-generated constructor stub
 		this.driver = driver;
 		appUts = new ApplicationUtilities(driver);
-		readprop = new ReadProperties("testData/TestData.properties");
+		readprop = new ReadProperties("testData/Data.properties");
 
 	}
 
@@ -32,8 +32,8 @@ public class Login {
 		System.out.println(" Start PO : loginToApplication");
 		System.out.println("loginToApplication");
 
-		appUts.returnAnElement("id", "username").sendKeys("Admin1");
-		appUts.returnAnElement("id", "password").sendKeys("electus999");
+		appUts.returnAnElement("id", "username").sendKeys(readprop.readValue("UserName"));
+		appUts.returnAnElement("id", "password").sendKeys(readprop.readValue("PassWord"));
 		appUts.returnAnElement("xpath", "//button[text()='Sign In']").click();
 
 		System.out.println(" End PO : loginToApplication");
@@ -42,12 +42,11 @@ public class Login {
 	public void switchWindow() {
 		System.out.println(" Start PO : switchWindow");
 		System.out.println("switchWindow");
-		//String mulWindow = driver.getWindowHandle();
+		// String mulWindow = driver.getWindowHandle();
 		for (String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
-		//driver.switchTo().window(mulWindow);
-
+		// driver.switchTo().window(mulWindow);
 		System.out.println(" End PO : switchWindow");
 	}
 

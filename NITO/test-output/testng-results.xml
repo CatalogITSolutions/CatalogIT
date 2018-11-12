@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="59859" started-at="2018-11-09T10:23:12Z" finished-at="2018-11-09T10:24:12Z">
+  <suite name="Default suite" duration-ms="23354" started-at="2018-11-12T06:49:56Z" finished-at="2018-11-12T06:50:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="59859" started-at="2018-11-09T10:23:12Z" finished-at="2018-11-09T10:24:12Z">
+    <test name="Default test" duration-ms="23354" started-at="2018-11-12T06:49:56Z" finished-at="2018-11-12T06:50:19Z">
       <class name="testSuites.TestSuites">
-        <test-method status="PASS" signature="runUserChoice()[pri:0, instance:testSuites.TestSuites@2c3d1214]" name="runUserChoice" duration-ms="59715" started-at="2018-11-09T10:23:12Z" finished-at="2018-11-09T10:24:12Z">
+        <test-method status="PASS" signature="runUserChoice()[pri:0, instance:testSuites.TestSuites@4b7dc788]" name="runUserChoice" duration-ms="23324" started-at="2018-11-12T06:49:56Z" finished-at="2018-11-12T06:50:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runUserChoice -->
