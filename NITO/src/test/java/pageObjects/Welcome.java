@@ -1,7 +1,9 @@
 package pageObjects;
 
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
+
 
 import applicationUtilities.ApplicationUtilities;
 import generalUtilities.HoldOn;
@@ -40,7 +42,7 @@ public class Welcome {
 //	}
 
 	public void launchApplication() {
-		System.out.println("Welcome to IRCTC");
+		System.out.println("Welcome to NITO Application");
 		System.out.println(" Start PO : launchApplication");
 		driver.manage().window().maximize();
 
@@ -86,6 +88,12 @@ public class Welcome {
 		System.out.println(" End PO : closeApplication");
 
 	}
+	
+	
+
+
+
+
 
 	/*
 	 * @AfterMethod public void afterMethod() { driver.quit();
