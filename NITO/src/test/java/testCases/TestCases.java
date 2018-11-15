@@ -138,7 +138,9 @@ public class TestCases {
 		driver.quit();
 	}
 
-	String sheetName = "StudentDataDriven";
+	/* ----- Student Data driven --------- */
+
+	private static String sheetName = "StudentDataDriven";
 
 	public void studentDataDrivenTestCase() {
 		// TODO Auto-generated method stub
