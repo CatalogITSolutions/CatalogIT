@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.Admin;
 
 import org.junit.Before;
 import org.junit.Test;

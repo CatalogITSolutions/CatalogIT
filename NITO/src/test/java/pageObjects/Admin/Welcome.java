@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.Admin;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
