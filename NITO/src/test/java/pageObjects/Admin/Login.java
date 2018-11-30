@@ -57,7 +57,7 @@ public class Login {
 		System.out.println(" Start PO : logoutFromApplication");
 		System.out.println("logoutFromApplication");
 
-		appUts.returnAnElement("xpath", "//a[@class='a ng-star-inserted']//span[contains(text(),'Logout')]").click();
+		appUts.returnAnElement("xpath", "//a[contains(text(),'LOGOUT')]").click();
 		System.out.println(" End PO : logoutFromApplication");
 
 	}

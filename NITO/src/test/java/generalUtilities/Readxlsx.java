@@ -55,6 +55,21 @@ public class Readxlsx {
 		return CellData;
 	}
 
+	public String getRawData(String sheetName, int row, int col) {
+		readsheet = getMySheet(sheetName);
+		Cell = readsheet.getRow(row).getCell(col);
+		String CellData1 = Cell.getRawValue();
+		return CellData1;
+	}
+
+	public String getIntData(String sheetName, int row, int col) {
+		readsheet = getMySheet(sheetName);
+		Cell = readsheet.getRow(row).getCell(col);
+		int intData = (int) Cell.getNumericCellValue();
+		String data = String.valueOf(intData);
+		return data;
+	}
+
 	public int getRowCount(String sheetName) {
 		readsheet = getMySheet(sheetName);
 		int row = readsheet.getLastRowNum();

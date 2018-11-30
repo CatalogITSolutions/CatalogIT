@@ -53,6 +53,7 @@ public class Welcome {
 		// driver.get(readprop.readValue("URL"));
 		// driver.get(readxl.getCellData("URL", 0, 0));
 		// driver.get(readxml.getMenuData("URL", "/Train/Link[@id='1']/url"));
+		wait.implicitlyWait(driver, 10);
 		driver.get(readprop.readValue("URL"));
 		appUts.returnAnElement("xpath", "//a[text()='Online Exam']").click();
 		appUts.returnAnElement("xpath", "//span[text()='-- Choose One --']").click();

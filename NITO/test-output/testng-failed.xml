@@ -5,7 +5,7 @@
     <classes>
       <class name="testSuites.TestSuites">
         <methods>
-          <include name="studentDataDrivenTestSuite"/>
+          <include name="ts_addadmin"/>
         </methods>
       </class> <!-- testSuites.TestSuites -->
     </classes>

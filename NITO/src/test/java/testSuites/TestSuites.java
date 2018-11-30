@@ -11,12 +11,16 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 
 //-:--:--:--:- Importing Unit Testing class -:--:--:--:-
 
 import org.testng.annotations.Test;
 //import org.junit.Test;
+
+import generalUtilities.Listener;
 
 // -:--:--:--:- Importing local project file class -:--:--:--:-
 
@@ -28,9 +32,6 @@ public class TestSuites {
 	TestCases tc;
 	ExtentReports extentFamily;
 	ExtentTest parent;
-	ExtentTest child1;
-	ExtentTest child2;
-	ExtentTest child3;
 	ExtentTest childx;
 	boolean flag;
 	public static String xlfilepath;
@@ -86,20 +87,135 @@ public class TestSuites {
 	public void smokeSuite() {
 		// TODO Auto-generated method stub
 		System.out.println(" Start ts: smokeSuite");
-		parent.appendChild(childx);
-		flag = tc.goToApplication();
-		if (flag) {
-			child1.log(LogStatus.PASS, "Step name: Admin Login", "Result: Login Successfully");
-		} else {
-			child1.log(LogStatus.FAIL, "Failed to login", child1.addScreenCapture(tc.TakeErrorScreenShot("login")));
-		}
 
-		parent.log(LogStatus.INFO, "Execution Done");
-		extentFamily.flush();
-		extentFamily.endTest(parent);
 		System.out.println(" End ts: smokeSuite");
 	}
 
+	/* ************* Admin Page Testsuites *************** */
+
+	@Test
+	public void ts_UsersLogData() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_UsersLogData");
+
+		tc.usersLogData();
+		System.out.println(" End ts: ts_UsersLogData");
+	}
+
+	@Test
+	public void ts_StudentExamStatus() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_StudentExamStatus");
+
+		tc.studentExamStatus();
+
+		System.out.println(" End ts: ts_StudentExamStatus");
+	}
+
+	@Test
+	public void ts_AddContactDetails() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_AddContactDetails");
+
+		tc.addContactDetails();
+
+		System.out.println(" End ts: ts_AddContactDetails");
+	}
+
+	@Test
+	public void ts_ResultsCalculation() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_ResultsCalculation");
+
+		tc.resultsCalculation();
+
+		System.out.println(" End ts: ts_ResultsCalculation");
+	}
+
+	@Test
+	public void ts_UpdateKey() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_UpdateKey");
+
+		tc.updateKey();
+
+		System.out.println(" End ts: ts_UpdateKey");
+	}
+
+	@Test
+	public void ts_UploadCarousel() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_UploadCarousel");
+
+		tc.uploadCarousel();
+
+		System.out.println(" End ts: ts_UploadCarousel");
+	}
+
+	@Test
+	public void ts_UploadLogo() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_UploadLogo");
+
+		tc.uploadLogo();
+
+		System.out.println(" End ts: ts_UploadLogo");
+	}
+
+	@Test
+	public void ts_SetExamPattern() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_SetExamPattern");
+
+		tc.setExamPattern();
+
+		System.out.println(" End ts: ts_SetExamPattern");
+	}
+
+	@Test
+	public void ts_ExamQuestionPaper() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_ExamQuestionPaper");
+
+		tc.examQuestionPaper();
+
+		System.out.println(" End ts: ts_ExamQuestionPaper");
+	}
+
+	@Test
+	public void ts_SubmitExam() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_SubmitExam");
+
+		tc.submitExam();
+
+		System.out.println(" End ts: ts_SubmitExam");
+	}
+
+	@Test
+	public void ts_addadmin() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_AddAdmin");
+
+		tc.addAdmin();
+
+		System.out.println(" End ts: ts_AddAdmin");
+	}
+	
+	@Test
+	public void ts_accessRoles() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_AddAdmin");
+
+		tc.accessRole();
+
+		System.out.println(" End ts: ts_AddAdmin");
+	}
+
+	/*
+	 * ------------------------------------------ Student TestSuites
+	 * ------------------------------------------
+	 */
 	@Test
 	public void unitSuite() {
 		// TODO Auto-generated method stub
@@ -218,12 +334,12 @@ public class TestSuites {
 		extentFamily.endTest(parent);
 		System.out.println(" End ts: unitSuite6");
 	}
-	
-	/*   *************  Student Data Driven Testsuite ***************   */
-	
+
+	/* ************* Student Data Driven Testsuite *************** */
+
 	@Test
 	public void studentDataDrivenTestSuite() {
 		tc.studentDataDrivenTestCase();
 	}
 
-}
+} /* **** END CLASS *********************/
