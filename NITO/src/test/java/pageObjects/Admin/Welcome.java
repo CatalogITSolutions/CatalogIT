@@ -61,8 +61,8 @@ public class Welcome {
 		// appUts.returnAnElement("xpath", "//li[text()='Electus 2']").click();
 		// appUts.selectAnElementFromDropDown("xpath", "//li[text()='Electus 2']","Electus 2");
 	//	selectClient();
-	appUts.returnAnElement("xpath", "//li[text()='Electus 2']").click();
-		 appUts.returnAnElement("xpath", "//input[@type='submit']").click();
+    	appUts.returnAnElement("xpath", "//li[text()='Electus 2']").click();
+		 appUts.returnAnElement("xpath", "//button[@type='submit']").click();
 		 appUts.returnAnElement("xpath", "//a[text()='Online Exam']").click();
 		System.out.println("End PO : launchApplication");
 	}
@@ -85,7 +85,7 @@ public class Welcome {
 
 	public void closeApplication() {
 		System.out.println(" Start PO : closeApplication");
-		System.out.println("");
+	//	System.out.println("");
 		System.out.println(" End PO : closeApplication");
 
 	}

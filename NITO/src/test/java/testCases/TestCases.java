@@ -1,9 +1,11 @@
 package testCases;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 
+import generalUtilities.BrowserSetup;
+import generalUtilities.ReadProperties;
+import generalUtilities.ReadXL;
+import generalUtilities.Readxlsx;
 import generalUtilities.Snippet;
 import pageObjects.Admin.AccessRoles;
 import pageObjects.Admin.AddAdmin;
@@ -26,10 +28,8 @@ import pageObjects.Student.Rank;
 import pageObjects.Student.Result;
 import pageObjects.Student.SPA;
 import pageObjects.Student.StLogin;
+import pageObjects.Student.StLoginPageFactory;
 import pageObjects.Student.StartTest;
-import generalUtilities.BrowserSetup;
-import generalUtilities.ReadProperties;
-import generalUtilities.Readxlsx;
 
 public class TestCases {
 
@@ -37,6 +37,7 @@ public class TestCases {
 	BrowserSetup brsetup;
 	ReadProperties readprop;
 	Readxlsx readxlsx;
+	ReadXL readxl;
 	Welcome welc;
 	Login login;
 	Snippet snip;
@@ -50,6 +51,7 @@ public class TestCases {
 	Profile stProfile;
 	Rank stRank;
 	Result stResult;
+	StLoginPageFactory stLoginPF;
 
 	UsersLogData userlog;
 	StudentExamStatus exStatus;
@@ -68,6 +70,7 @@ public class TestCases {
 		// TODO Auto-generated constructor stub
 		readprop = new ReadProperties("testData/Data.properties");
 		readxlsx = new Readxlsx("testData/Dataxlsx.xlsx");
+		readxl = new ReadXL("testData/Dataxl.xls");
 		brsetup = new BrowserSetup();
 		driver = brsetup.driverType();
 		/* --- Admin Page objects ------- */
@@ -96,6 +99,7 @@ public class TestCases {
 		stProfile = new Profile(driver);
 		stRank = new Rank(driver);
 		stResult = new Result(driver);
+		stLoginPF = new StLoginPageFactory(driver);
 	}
 
 	/* ****** ADMIN TESTCASE ******* */
@@ -270,7 +274,38 @@ public class TestCases {
 
 	}
 
+	private static String adminSheet = "AdminDataDriven";
+
+	public void adminDataDrivenTestCase() {
+		// TODO Auto-generated method stub
+
+		for (int i = 0; i < readxl.getRowCount(adminSheet); i++) {
+
+			welc.launchApplication();
+			System.out.println("loop count =" + i);
+			System.out.println(readxl.getRowCount(adminSheet));
+			System.out.println((readxl.getCellData(adminSheet, 0, i) + readxl.getCellData(adminSheet, 1, i)));
+			login.loginToAdminDataDriven(readxl.getCellData(adminSheet, 0, i), readxl.getCellData(adminSheet, 1, i));
+			login.switchWindow();
+			login.logoutFromApplication();
+			welc.closeApplication();
+
+		}
+
+	}
+
 	// /// //// ///// ========== Student TestCases ==========================
+
+	public boolean studentLoginAndLogoutPageFactory() {
+		System.out.println(" Start tc: tc studentLoginAndLogout");
+		welc.launchApplication();
+		stLoginPF.loginToStudentUsingPageFactory();
+		stLoginPF.switchWindow();
+		stLoginPF.logoutFromStudent();
+		// dash.selectState();
+		System.out.println(" End tc: tc studentLoginAndLogout");
+		return true;
+	}
 
 	/* ******* 12. studentLoginAndLogout ******* */
 
@@ -362,16 +397,16 @@ public class TestCases {
 	public void studentDataDrivenTestCase() {
 		// TODO Auto-generated method stub
 
-		for (int i = 0; i < readxlsx.getRowCount(sheetName); i++) {
+		for (int i = 0; i < readxlsx.getRowCount(adminSheet); i++) {
 
 			welc.launchApplication();
 			System.out.println("loop count" + i);
-			System.out.println(readxlsx.getRowCount(sheetName));
-			System.out.println((readxlsx.getCellData(sheetName, i, 0) + readxlsx.getCellData(sheetName, i, 1)));
+			System.out.println(readxlsx.getRowCount(adminSheet));
+			System.out.println((readxlsx.getCellData(adminSheet, i, 0) + readxlsx.getCellData(adminSheet, i, 1)));
 			// System.out.println(readxl.getCellData(xlfile, 0,
 			// i)+readxl.getCellData(xlfile, 1, i));
-			stlogin.loginToStudentDataDriven(readxlsx.getCellData(sheetName, i, 0),
-					readxlsx.getCellData(sheetName, i, 1));
+			stlogin.loginToStudentDataDriven(readxlsx.getCellData(adminSheet, i, 0),
+					readxlsx.getCellData(adminSheet, i, 1));
 			stlogin.switchWindow();
 			stlogin.logoutFromStudentDataDriven();
 			welc.closeApplication();

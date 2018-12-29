@@ -2,25 +2,16 @@ package testSuites; // Current Package
 
 // -:--:--:--:- Importing Predefined Java class -:--:--:--:-
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 // -:--:--:--:- Importing Extent Report class -:--:--:--:-
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Listeners;
-
 //-:--:--:--:- Importing Unit Testing class -:--:--:--:-
 
 import org.testng.annotations.Test;
 //import org.junit.Test;
-
-import generalUtilities.Listener;
 
 // -:--:--:--:- Importing local project file class -:--:--:--:-
 
@@ -91,7 +82,16 @@ public class TestSuites {
 		System.out.println(" End ts: smokeSuite");
 	}
 
-	/* ************* Admin Page Testsuites *************** */
+	/* ************* Admin Page TestSuites *************** */
+
+	@Test(invocationCount = 2)
+	public void ts_LoginToClient() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_ToClient");
+
+		tc.goToApplication();
+		System.out.println(" End ts: ts_ToClient");
+	}
 
 	@Test
 	public void ts_UsersLogData() {
@@ -201,7 +201,7 @@ public class TestSuites {
 
 		System.out.println(" End ts: ts_AddAdmin");
 	}
-	
+
 	@Test
 	public void ts_accessRoles() {
 		// TODO Auto-generated method stub
@@ -210,6 +210,22 @@ public class TestSuites {
 		tc.accessRole();
 
 		System.out.println(" End ts: ts_AddAdmin");
+	}
+	/* ************* Admin Data Driven Testsuite *************** */
+
+	@Test
+	public void adminDataDrivenTestSuite() {
+		tc.adminDataDrivenTestCase();
+	}
+
+	@Test
+	public void ts_stloginPageFactory() {
+		// TODO Auto-generated method stub
+		System.out.println(" Start ts: ts_stloginPageFactory");
+
+		tc.studentLoginAndLogoutPageFactory();
+
+		System.out.println(" End ts: ts_stloginPageFactory");
 	}
 
 	/*

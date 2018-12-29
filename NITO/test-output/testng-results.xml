@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="19" total="20" passed="1">
+<testng-results skipped="0" failed="0" ignored="22" total="24" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22853" started-at="2018-11-28T14:33:39Z" finished-at="2018-11-28T14:34:02Z">
+  <suite name="Default suite" duration-ms="41455" started-at="2018-12-17T10:13:16Z" finished-at="2018-12-17T10:13:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22853" started-at="2018-11-28T14:33:39Z" finished-at="2018-11-28T14:34:02Z">
+    <test name="Default test" duration-ms="41455" started-at="2018-12-17T10:13:16Z" finished-at="2018-12-17T10:13:58Z">
       <class name="testSuites.TestSuites">
-        <test-method status="PASS" signature="ts_UsersLogData()[pri:0, instance:testSuites.TestSuites@72b4ecb2]" name="ts_UsersLogData" duration-ms="22697" started-at="2018-11-28T14:33:39Z" finished-at="2018-11-28T14:34:02Z">
+        <test-method status="PASS" signature="ts_LoginToClient()[pri:0, instance:testSuites.TestSuites@59cba5a]" name="ts_LoginToClient" duration-ms="29807" started-at="2018-12-17T10:13:16Z" finished-at="2018-12-17T10:13:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ts_UsersLogData -->
+        </test-method> <!-- ts_LoginToClient -->
+        <test-method status="PASS" signature="ts_LoginToClient()[pri:0, instance:testSuites.TestSuites@59cba5a]" name="ts_LoginToClient" duration-ms="11497" started-at="2018-12-17T10:13:46Z" finished-at="2018-12-17T10:13:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ts_LoginToClient -->
       </class> <!-- testSuites.TestSuites -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

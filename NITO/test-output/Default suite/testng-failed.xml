@@ -5,7 +5,7 @@
     <classes>
       <class name="testSuites.TestSuites">
         <methods>
-          <include name="ts_addadmin"/>
+          <include name="ts_stloginPageFactory"/>
         </methods>
       </class> <!-- testSuites.TestSuites -->
     </classes>

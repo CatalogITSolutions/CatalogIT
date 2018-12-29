@@ -22,8 +22,6 @@ public class Login {
 		readprop = new ReadProperties("testData/Data.properties");
 
 	}
-	
-	
 
 	@BeforeMethod
 	public void beforeLoginToApplication() {
@@ -59,6 +57,21 @@ public class Login {
 
 		appUts.returnAnElement("xpath", "//a[contains(text(),'LOGOUT')]").click();
 		System.out.println(" End PO : logoutFromApplication");
+
+	}
+
+	public void loginToAdminDataDriven(String uName, String pWord) {
+		// TODO Auto-generated method stub
+
+		// TODO Auto-generated method stub
+		System.out.println(" Start PO : loginToAdminDataDriven");
+		System.out.println("loginToAdminDataDriven");
+
+		appUts.returnAnElement("id", "username").sendKeys(uName);
+		appUts.returnAnElement("id", "password").sendKeys(pWord);
+		appUts.returnAnElement("xpath", "//button[text()='Sign In']").click();
+
+		System.out.println(" End PO : loginToAdminDataDriven");
 
 	}
 
